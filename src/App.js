@@ -5,6 +5,8 @@ import About from './Components/About/About';
 import Blogs from './Components/Blogs/Blogs';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
+// import Login from './Components/Login/Login';
+
 
 function App() {
   return (
@@ -14,8 +16,9 @@ function App() {
 
       <Routes>
         <Route path ='/' element={<Home/>}/>
-        <Route path ='/blogs' element={<Blogs/> }/>
+        <Route path ='/blogs' element={<Blogs/>}/>
         <Route path ='/about' element={<About/>}/>
+        {/* <Route path ='/login' element={<Login/>}/> */}
         <Route path ='*' element={<NotFound/>}/>
       </Routes>
       

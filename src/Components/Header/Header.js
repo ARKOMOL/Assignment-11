@@ -4,16 +4,33 @@ import CustomLink from '../CustomLink/CustomLink';
 
 const Header = () => {
     return (
-        <div>
-<h1>header</h1>
-<Nav className='text-none justify-content-center' >
- 
-    <CustomLink to="/">Home</CustomLink>
-    <CustomLink className='px-5' to="/blogs">Blogs</CustomLink>
-    <CustomLink to="/about">About</CustomLink>
+        <div className=' bg-info '>
+
+<div>    
+<ul className=" container nav justify-content-between text-white ">
+<div className=' px-5 mx-5'>
+    <h3>Car Manager</h3>
+</div>
+<div className='d-flex'>
+<li class="nav-item " >
+  <CustomLink class="nav-link " to="/">Home</CustomLink>
+    </li>
+  <li class="nav-item ">
+  <CustomLink className='px-5 nav-link' to="/blogs">Blogs</CustomLink>
+  </li>
+  <li class="nav-item">
+  <CustomLink className='nav-link' to="/about">About</CustomLink>
+  </li>
+  <li class="nav-item">
+  <CustomLink className='nav-link' to="/login">Login</CustomLink>
+  </li>
+</div>
+</ul>
+   
+</div>
 
 
-</Nav>
+
 
 
 
