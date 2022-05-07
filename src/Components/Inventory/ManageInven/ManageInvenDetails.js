@@ -26,7 +26,7 @@ const ManageInvenDetails = ({product,handleToDelete}) => {
     <Card.Text>
     <p>{supplier}</p>
     </Card.Text>
-    <button  onClick={()=> handleToDelete}>Go Back</button>
+    <button  onClick={()=> handleToDelete(product._id)}>Delete</button>
 
   </Card.Body>
 </Card>

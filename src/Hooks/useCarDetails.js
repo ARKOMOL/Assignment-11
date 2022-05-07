@@ -7,14 +7,12 @@ const useCarDetails = carId => {
     useEffect(()=>{
         const url = `http://localhost:5000/inventory/${carId}`;
         console.log(url);
-        
-    })
+        fetch(url)
+        .then(res=>res.json())
+        .then(data =>setCarDetails(data))
+    },[carId])
 
-    return (
-        <div>
-            
-        </div>
-    );
+    return [carDetails,setCarDetails] ;
 };
 
 export default useCarDetails;
