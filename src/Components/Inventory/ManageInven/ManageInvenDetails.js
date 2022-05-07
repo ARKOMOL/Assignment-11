@@ -1,12 +1,10 @@
-import { Button } from 'bootstrap';
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
+import del from '../../../img/delete.png'
 const ManageInvenDetails = ({product,handleToDelete}) => {
-    console.log(handleToDelete);
-    const {name,img,description,price,quantity, supplier} =product;
-    const navigate = useNavigate();
+        const {name,img,description,price,quantity, supplier} =product;
+    
     return (
 <div>
 <div >
@@ -25,8 +23,10 @@ const ManageInvenDetails = ({product,handleToDelete}) => {
     </Card.Text>
     <Card.Text>
     <p>{supplier}</p>
+  
     </Card.Text>
-    <button  onClick={()=> handleToDelete(product._id)}>Delete</button>
+ 
+    <img className='w-25' src={del} onClick={()=> handleToDelete(product._id)} alt="" />
 
   </Card.Body>
 </Card>

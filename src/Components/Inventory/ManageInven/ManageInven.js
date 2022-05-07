@@ -8,6 +8,8 @@ const ManageInven = () => {
     const [products,setProducts] = useProducts();
 
     const handleToDelete = id =>{
+        const confirm = window.confirm ('Want to delete this item?')
+       if (confirm) {
         const url = `http://localhost:5000/inventory/${id}`;
         fetch(url,{
             method:'DELETE'
@@ -18,6 +20,7 @@ const ManageInven = () => {
             const restItems = products.filter(product => product._id !== id);
             setProducts(restItems);
         })
+       }
         
     }
     return (
@@ -27,6 +30,7 @@ const ManageInven = () => {
                     }
 
 <button  onClick={()=> navigate('/')}>Go Back</button>
+<button  onClick={()=> navigate('/addcollection')}>Add New Collection</button>
 
         </div>
     );
