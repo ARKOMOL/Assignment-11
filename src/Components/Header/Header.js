@@ -12,16 +12,16 @@ const Header = () => {
     <h3>Car Manager</h3>
 </div>
 <div className='d-flex'>
-<li class="nav-item " >
-  <CustomLink class="nav-link " to="/">Home</CustomLink>
+<li className="nav-item " >
+  <CustomLink className="nav-link " to="/">Home</CustomLink>
     </li>
-  <li class="nav-item ">
+  <li className="nav-item ">
   <CustomLink className='px-5 nav-link' to="/blogs">Blogs</CustomLink>
   </li>
-  <li class="nav-item">
+  <li className="nav-item">
   <CustomLink className='nav-link' to="/about">About</CustomLink>
   </li>
-  <li class="nav-item">
+  <li className="nav-item">
   <CustomLink className='nav-link' to="/login">Login</CustomLink>
   </li>
 </div>
