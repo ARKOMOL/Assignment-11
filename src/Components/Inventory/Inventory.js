@@ -1,18 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import useProducts from '../../Hooks/useProducts';
 import InventoryDetails from './InventoryDetails';
+import ManageInven from './ManageInven/ManageInven';
 
 
 const Inventory = () => {
     const [products,setProducts] = useProducts([]);
-
+    // console.log(products);
+ const navigate = useNavigate()
     
 const handleUpdate =()=>{
     console.log('working update');
 }
     return (
-        <div className='container bg-dark d-flex'>
+        <div className='container bg-dark '>
           
          
                 
@@ -24,7 +27,7 @@ const handleUpdate =()=>{
         
       
            
-
+<button onClick={()=> navigate('/manageinven')}>Mange Inventory</button>
         </div>
     );
 };
