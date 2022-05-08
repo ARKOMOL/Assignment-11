@@ -37,7 +37,7 @@ const AddCollection = () => {
                 <input className='my-1 py-2 rounded-2' placeholder='Supplier Name'  {...register("supplier", { required: true })} />
                 <input className='my-1 py-2 rounded-2' placeholder='Quantity' type="number" {...register("quantity")} />
                 <input className='my-1 py-2 rounded-2' placeholder='Price' type="number" {...register("price")} />
-                <input className='my-1 py-2 rounded-2' placeholder='' type="submit" />
+                <input className='my-1 py-2 rounded-2 bg-info' placeholder='' type="submit" />
             </form>
             <button className='bg-info py-2 rounded-3 my-5' onClick={()=> navigate('/manageinven')} >Go back to Inventory</button>
         </div>
