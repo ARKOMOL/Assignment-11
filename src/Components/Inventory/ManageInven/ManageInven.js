@@ -11,6 +11,7 @@ const ManageInven = () => {
         const confirm = window.confirm ('Want to delete this item?')
        if (confirm) {
         const url = `http://localhost:5000/inventory/${id}`;
+       
         fetch(url,{
             method:'DELETE'
         })

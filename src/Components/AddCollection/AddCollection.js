@@ -5,7 +5,23 @@ import { useNavigate } from 'react-router-dom';
 const AddCollection = () => {
     const navigate= useNavigate();
     const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data =>{
+    console.log(data);
+    const url = `http://localhost:5000/inventory`
+    console.log(url);
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body:JSON.stringify(data)
+    })
+    .then(res =>res.json())
+    .then(finalResult =>{
+        console.log(finalResult);
+    })
+
+  };
   
     return (
         <div>
