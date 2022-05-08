@@ -5,7 +5,8 @@ const useCarDetails = carId => {
     const [carDetails,setCarDetails] = useState({});
 
     useEffect(()=>{
-        const url = `http://localhost:5000/inventory/${carId}`;
+        // const url = `http://localhost:5000/inventory/${carId}`;
+        const url = `https://stormy-springs-20061.herokuapp.com/inventory/${carId}`
         console.log(url);
         fetch(url)
         .then(res=>res.json())
