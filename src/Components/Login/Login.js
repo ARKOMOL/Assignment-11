@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 
 
-import Spinner from '../Spinner/Spinner';
 import auth from '../Firebase/Firebase.init';
 
 const Login = () => {
@@ -30,7 +29,7 @@ const Login = () => {
 
 
     if (gLoading) {
-    return <Spinner/>
+    return 'Loading....'
 }
 
 
@@ -63,7 +62,7 @@ const Login = () => {
     }
     return (
         <div>
-        <div className='login-container '>
+        <div className='login-container bg-info '>
             <div>
                 <h2 className='form-title text-center h1'>Login</h2>
                 <form className='login-form' onSubmit={handleUserSignIn}>
@@ -79,15 +78,15 @@ const Login = () => {
                         loading && <p>Loading...</p>
                     }
                    
-                    <input className='form-submit  bg-info' type="submit" value="Login" />
+                    <input className='form-submit h2' type="submit" value="Login" />
                 </form>
         
                 <p>
-                    New to Dentist Ace? <Link className='form-link' to="/signup">Create an account</Link>
+                    New to Car Manager? <Link className='form-link' to="/signup">Create an account</Link>
                 </p>
                 <button onClick={resetPassword}>reset password</button> 
-                <button className='hover:bg-sky-700' onClick={()=> signInWithGoogle()}> Google</button>
-                {/* <button  onClick={()=> signInWithFacebook()}> Facebook</button> */}
+                <button className='mb-3' onClick={()=> signInWithGoogle()}> Google</button>
+              
                    
             </div>
         </div>

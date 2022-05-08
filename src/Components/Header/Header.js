@@ -1,8 +1,16 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Nav } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import CustomLink from '../CustomLink/CustomLink';
+import auth from '../Firebase/Firebase.init';
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+
+  const handleSignOut = () =>{
+      signOut(auth);
+  }
     return (
         <div className=' bg-info '>
 
@@ -21,9 +29,20 @@ const Header = () => {
   <li className="nav-item">
   <CustomLink className='nav-link' to="/about">About</CustomLink>
   </li>
-  <li className="nav-item">
-  <CustomLink className='nav-link' to="/login">Login</CustomLink>
-  </li>
+  
+  {
+                    user ?
+                    <>
+                      <CustomLink className='nav-link' to="/manageinven">Manage Items</CustomLink>
+                      <CustomLink className='nav-link' to="/addcollection">Add Items</CustomLink>
+                      <CustomLink className='nav-link' to="/myitems">MY Items</CustomLink>
+                      <button className='btn btn-primary btn-block mb-4 ' onClick={handleSignOut}>Signout</button>
+                    </>
+                    :
+                    <CustomLink className='nav-link' to="/login">Login</CustomLink>
+   }
+  
+  
 </div>
 </ul>
    

@@ -16,7 +16,7 @@ const SignUp = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state?.from?.pathname || '/checkout';
+    let from = location.state?.from?.pathname || '/';
 
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true})
 
@@ -63,7 +63,7 @@ const SignUp = () => {
 
     return (
     <div>
-        <div className='login-container bg-info '>
+        <div className='login-container bg-info py-3 '>
                 <h2 className='form-title text-center text-4xl'>Sign Up</h2>
                 <form className='login-form' onSubmit={handleCreateUser}>
                     <div className="input-group">
@@ -84,7 +84,7 @@ const SignUp = () => {
                     </div>
                     <div className="input-group">
                        
-                        <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm-password" id=""  placeholder='Confirm Password' />
+                        <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm-password" id=""  placeholder='Confirm Password' required />
                     </div>
                     <p style={{color: 'red'}}>{error}</p>
                     <input className='form-submit' type="submit" value="Sign Up"  required/>
