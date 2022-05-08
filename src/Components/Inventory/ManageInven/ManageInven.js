@@ -26,10 +26,14 @@ const ManageInven = () => {
         
     }
     return (
-        <div>
+        <div >
+            
+            <div className='d-flex'>
             {
                        products.map(product =>(<ManageInvenDetails key={product._id} product={product} handleToDelete={handleToDelete} />))
                     }
+            </div>
+          
 
 <button  onClick={()=> navigate('/')}>Go Back</button>
 <button  onClick={()=> navigate('/addcollection')}>Add New Collection</button>
