@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useProducts from '../../../Hooks/useProducts';
 import ManageInvenDetails from './ManageInvenDetails';
-
+import '../Inventory.css'
 const ManageInven = () => {
     const navigate = useNavigate()
     const [products,setProducts] = useProducts();
@@ -28,15 +28,15 @@ const ManageInven = () => {
     return (
         <div >
             
-            <div className='d-flex'>
+            <div className='container inventory '>
             {
                        products.map(product =>(<ManageInvenDetails key={product._id} product={product} handleToDelete={handleToDelete} />))
                     }
             </div>
           
 
-<button  onClick={()=> navigate('/')}>Go Back</button>
-<button  onClick={()=> navigate('/addcollection')}>Add New Collection</button>
+<button className='btn btn-primary btn-block mb-4 mx-4' onClick={()=> navigate('/')}>Go Back</button>
+<button className='btn btn-primary btn-block mb-4'  onClick={()=> navigate('/addcollection')}>Add New Collection</button>
 
         </div>
     );

@@ -8,7 +8,7 @@ const ManageInvenDetails = ({product,handleToDelete}) => {
     return (
 <div>
 <div >
-     <Card style={{ width: '18rem' }}>
+     <Card className='mx-auto my-3 bg-secondary' style={{ width: '18rem' }}>
   <Card.Img variant="top" src={img} />
   <Card.Body>
     <Card.Title>{name}e</Card.Title>
