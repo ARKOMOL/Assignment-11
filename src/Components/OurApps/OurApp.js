@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const OurApp = () => {
     return (
         <div>
-             <div className='bg-info'>
+             <div className='bg-success'>
             <div className=' d-flex container mx-auto py-5 '>
             <div className='my-auto mx-5'>
                 <h3 className='text-danger'>

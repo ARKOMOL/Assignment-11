@@ -3,7 +3,8 @@ import React from 'react';
 const NotFound = () => {
     return (
         <div>
-            <h1>not found anything page</h1>
+        
+           <img className='w-75 mx-auto rounded img-fluid' src='https://i.ytimg.com/vi/rRFK6WQtyrw/maxresdefault.jpg' alt="" />
         </div>
     );
 };

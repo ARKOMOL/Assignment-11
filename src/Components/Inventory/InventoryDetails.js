@@ -10,8 +10,8 @@ const InventoryDetails = ({product,handleUpdate}) => {
         navigate(`/inventory/${id}`)
     }
     return (
-        <div >
-     <Card style={{ width: '18rem' }}>
+        <div  >
+     <Card className='bg-secondary my-3 mx-auto' style={{ width: '18rem' }}>
   <Card.Img variant="top" src={img} />
   <Card.Body>
     <Card.Title>{name}</Card.Title>
@@ -30,7 +30,7 @@ const InventoryDetails = ({product,handleUpdate}) => {
     <Card.Text>
     <p>{supplier}</p>
     </Card.Text>
-    <button  onClick={()=> navigateToCarDetails(_id)}>Update</button>
+    <button className='btn btn-info btn-block mb-4'  onClick={()=> navigateToCarDetails(_id)}>Update</button>
   </Card.Body>
 </Card>
           

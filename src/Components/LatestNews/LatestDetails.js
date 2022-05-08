@@ -5,7 +5,7 @@ const LatestDetails = ({latest}) => {
     // console.log(latest);
     const {img,origin,name,description} =latest;
     return (
-        <div  className='mx-3 mx-auto my-3' >
+        <div  className='mx-3 mx-auto my-3 ' >
               <div >
      <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={img} />

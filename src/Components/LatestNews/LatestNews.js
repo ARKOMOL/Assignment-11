@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LatestDetails from './LatestDetails';
-
+import '../Inventory/Inventory.css';
 const LatestNews = () => {
 
     const [latest,setLatest] = useState([]);
@@ -21,7 +21,7 @@ const LatestNews = () => {
            <h1>
                Our Lateast News
            </h1>
-            <div className='container d-flex'>
+            <div className='container inventory'>
             {
                        latest?.slice(0,3).map(latest =>(<LatestDetails key={latest._id} latest={latest}></LatestDetails>))
                     }
