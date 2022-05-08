@@ -16,6 +16,21 @@ useEffect(()=>{
     .then(data =>setCarDetails(data))
 })
 
+const handleToDeliverd =()=>{
+    const restQuantity = carDetails.quantity -1;
+    const url = `http://localhost:5000/inventory/${carId}`;
+    fetch(url,{
+        method:'PUT',
+        headers:{
+            "content-type":"application/json",
+        },
+        body:JSON.stringify({restQuantity})
+    })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+    
+}
+
     return (
         <div>
                     <div >
@@ -38,7 +53,7 @@ useEffect(()=>{
     <Card.Text>
     <p>{supplier}</p>
     </Card.Text>
-    <button  >Delivered</button>
+    <button onClick={ handleToDeliverd}  >Delivered</button>
   </Card.Body>
 </Card>
           

@@ -9,7 +9,8 @@ import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import ManageInven from './Components/Inventory/ManageInven/ManageInven';
-// import Login from './Components/Login/Login';
+import Login from './Components/Login/Login';
+import SignUp from './Components/SignUp/SignUp';
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
         <Route path ='/inventory/:carId' element={<CarDetails/>}/>
         <Route path ='/manageinven' element={<ManageInven/>}/>
         <Route path ='/addcollection' element={<AddCollection/>}/>
-        {/* <Route path ='/login' element={<Login/>}/> */}
+        <Route path ='/login' element={<Login/>}/>
+        <Route path ='/signup' element={<SignUp/>}/>
         {/* <Route path ='*' element={<NotFound/>}/> */}
       </Routes>
       
