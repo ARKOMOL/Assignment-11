@@ -10,6 +10,7 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import ManageInven from './Components/Inventory/ManageInven/ManageInven';
 import Login from './Components/Login/Login';
+import MyItems from './Components/MyItems/MyItems';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import SignUp from './Components/SignUp/SignUp';
 
@@ -24,8 +25,12 @@ function App() {
         <Route path ='/' element={<Home/>}/>
         <Route path ='/blogs' element={<Blogs/>}/>
         <Route path ='/about' element={<About/>}/>
-        <Route path ='/myitems' element={<About/>}/>
-        <Route path ='/inventory/:carId' element={<CarDetails/>}/>
+        <Route path ='/myitems' element={<MyItems/>}/>
+        <Route path ='/inventory/:carId' element={
+          <RequireAuth>
+            <CarDetails/>
+          </RequireAuth>
+        }/>
         <Route path ='/manageinven' element={
           <RequireAuth>
             <ManageInven/>
