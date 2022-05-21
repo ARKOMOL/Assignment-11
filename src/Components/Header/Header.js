@@ -1,7 +1,8 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Nav } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import CustomLink from '../CustomLink/CustomLink';
 import auth from '../Firebase/Firebase.init';
 
@@ -12,7 +13,7 @@ const Header = () => {
       signOut(auth);
   }
     return (
-        <div className=' bg-info '>
+       /*  <div className=' bg-info '>
 
 <div>    
 <ul className=" container nav justify-content-between text-white ">
@@ -29,7 +30,6 @@ const Header = () => {
   <li className="nav-item">
   <CustomLink className='nav-link' to="/about">About</CustomLink>
   </li>
-  
   {
                     user ?
                     <>
@@ -42,18 +42,58 @@ const Header = () => {
                     <CustomLink className='nav-link' to="/login">Login</CustomLink>
    }
   
-  
 </div>
 </ul>
-   
 </div>
+        </div> */
+
+        <>
+        <Navbar collapseOnSelect expand="lg" sticky='top' className='bg-info text-dark' variant="dark">
+            <Container>
+                <Navbar.Brand className ='h5' as={Link} to="/">
+                    {/* <img height={30} src={logo} alt="" /> */}
+                    Car Manager
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        
+                        
+                    </Nav>
+                    <Nav className='text-dark h5'>
+                    <Nav.Link className='text-dark h5' as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link  as={Link} to="blogs">Services</Nav.Link>
+                        <Nav.Link as={Link} to="about">About</Nav.Link>
+                        {
+                            user && <>
+                            <Nav.Link as={Link} to="manageinven">Manage Items</Nav.Link>
+                            <Nav.Link as={Link} to="addcollection">Add Items</Nav.Link>
+                            <Nav.Link as={Link} to="myitems">My Item</Nav.Link>
+                            </>
+                        }
+                        
+                        {
+                            user ?
+                                <button className='btn h3 btn-link text-white text-decoration-none' onClick={handleSignOut}>Sign Out</button>
+                            :
+                            <Nav.Link as={Link} to="login">
+                            Login
+                        </Nav.Link>}
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    </>
 
 
 
 
 
 
-        </div>
+
+
+
+
     );
 };
 
