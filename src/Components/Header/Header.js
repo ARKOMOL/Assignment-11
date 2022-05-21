@@ -62,7 +62,7 @@ const Header = () => {
                     </Nav>
                     <Nav className='text-dark h5'>
                     <Nav.Link className='text-dark h5' as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link  as={Link} to="blogs">Services</Nav.Link>
+                        <Nav.Link  as={Link} to="blogs">Blogs</Nav.Link>
                         <Nav.Link as={Link} to="about">About</Nav.Link>
                         {
                             user && <>
@@ -74,7 +74,7 @@ const Header = () => {
                         
                         {
                             user ?
-                                <button className='btn h3 btn-link text-white text-decoration-none' onClick={handleSignOut}>Sign Out</button>
+                                <button className='btn h3 btn-success btn-link text-white text-decoration-none' onClick={handleSignOut}>Sign Out</button>
                             :
                             <Nav.Link as={Link} to="login">
                             Login
