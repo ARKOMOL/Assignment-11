@@ -6,6 +6,7 @@ import ReStock from './ReStock';
 
 const CarDetails = () => {
     const navigate = useNavigate()
+    const [number, setNumber] = useState('');
 const{ carId }= useParams()
 const [carDetails,setCarDetails] = useState({});
 const{_id,name,img,description,price,quantity, supplier} = carDetails;
@@ -40,7 +41,7 @@ const handleToDelivered =(e)=>{
 const handleStock = (e) => {
    
     e.preventDefault();
-    const number = e.target.number.value;
+    setNumber( e.target.number.value)
    
       const updateQuantity = parseInt(carDetails?.quantity) + parseInt(number);
    
@@ -55,14 +56,16 @@ const handleStock = (e) => {
         body: JSON.stringify({quantity: updateQuantity }),
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
- 
+        .then((data) => console.log(data)
+     
+        );
+        setNumber('')
   };
 
 
     return (
-        <div>
-                    <div >
+ <div>
+<div className='container my-4 flex d-flex justify-content-center '>
      <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={img} />
   <Card.Body>
@@ -82,7 +85,7 @@ const handleStock = (e) => {
     <Card.Text>
     <p>{supplier}</p>
     </Card.Text>
-    <button onClick={ handleToDelivered}  >Delivered</button>
+    <button className='btn btn-primary my-2 ' onClick={ handleToDelivered}  >Delivered</button>
 {/* <ReStock/> */}
 <div>
 <form onSubmit={handleStock}>
@@ -90,6 +93,7 @@ const handleStock = (e) => {
               <input
                 type="number"
                 id="number"
+                name='number'
                 className="form-control"
                 placeholder="Type number"
                 required
