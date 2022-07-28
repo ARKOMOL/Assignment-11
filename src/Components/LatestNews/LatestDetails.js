@@ -7,7 +7,7 @@ const LatestDetails = ({latest}) => {
     return (
         <div  className='mx-3 mx-auto my-3 ' >
               <div >
-     <Card style={{ width: '18rem' }}>
+     <Card style={{ width: '25rem',height:'35rem' }}>
   <Card.Img variant="top" src={img} />
   <Card.Body>
   <Card.Text>

@@ -27,7 +27,7 @@ const ManageInven = () => {
     }
     return (
         <div >
-            
+          
             <div className='container inventory  h-100 '>
             {
                        products.map(product =>(<ManageInvenDetails key={product._id} product={product} handleToDelete={handleToDelete} />))

@@ -17,7 +17,9 @@ const handleUpdate =()=>{
     return (
         <div className='container mx-auto '>
           
-         
+          <h1 className='mt-3' >
+                Our Items 
+            </h1>
                 
               <div className='inventory'>
               {
